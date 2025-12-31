@@ -1,0 +1,250 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #2D5016;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.navcontainer a {
+    color: #F5F5DC;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navcontainer ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.navcontainer ul li a:hover {
+    color: #F5F5DC;
+    background-color: #87A96B;
+    border-radius: 10px;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    left: 0px;
+    right: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.navbuttons {
+    display: inline-flex;
+    width: auto;
+    gap: 20px;
+}
+
+.signup {
+    text-decoration: none;
+    color: #F5F5DC;
+    border: 2px solid #F5F5DC;
+    padding: 10px 15px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.signup:hover {
+    background-color: #87A96B;
+}
+
+.bx-cart {
+    font-size: 40px;
+    color: #F5F5DC;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hero {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+.hero_slider {
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero_slide {
+    object-fit: cover;
+    flex: 0 0 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.hero_track {
+    display: flex;
+    height: 100%;
+    animation: heroslide 30s linear infinite;
+}
+
+.hero_content {
+    position: relative;
+    z-index: 2;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #F5F5DC;
+    padding: 0 20px;
+}
+
+.explore {
+    border: none;
+    border-radius: 13px;
+    padding: 10px 20px;
+    background-color: #C4704B;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.explore:hover {
+    background-color: #A65D3C;
+}
+
+@keyframes heroslide {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-50%);
+    }
+}
+
+.featureproduct {
+    text-align: center;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    padding: 20px;
+}
+
+.featureproduct h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2d5016;
+}
+
+.featureproduct p {
+    font-size: 16px;
+    color: #5a7c3e;
+}
+
+.product-grid {
+    display: inline-block;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+}
+
+.productcard {
+    background: white;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.productcard:hover {
+    transform: translate(-10%);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.productimage {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: #f9f9f9;
+}
+
+.productimage  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productinfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.4;
+    border-bottom: 1px solid #eee;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.price span {
+    color: #C4704B;
+    padding: 30px;
+}
+
+.price a {
+    text-decoration: none;
+    color: #F5F5DC;
+    background-color: #C4704B;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.price a:hover {
+    background-color: #A65D3C;
+}
+
