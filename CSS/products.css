@@ -98,13 +98,16 @@ nav {
 
 .product-grid {
     display: inline-flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 30px;
     margin: 30px;
 }
 
 .productcard {
+    width: 350px;
+    align-content: center;
+    margin-left: 60px;
     background: white;
     overflow: hidden;
     border-radius: 15px;

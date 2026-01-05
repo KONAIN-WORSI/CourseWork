@@ -249,7 +249,7 @@ nav {
 .homefoot {
     background-color: #2C2C2C;
     width: 100%;
-    height: 500px;
+    height: 520px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -263,8 +263,10 @@ nav {
     color: #F5F5DC;
     text-decoration: none;
     padding: 10px 15px;
-    position: absolute;
-    left: 150px;
+    position: relative;
+    bottom: 148px;
+    left: 80px;
+    
     
 }
 
@@ -290,7 +292,7 @@ nav {
 
 .socialmedia {
     position: relative;
-    top: 240px;
+    /* top: 240px; */
 }
 
 .socialmedia a {
@@ -307,6 +309,7 @@ nav {
 .contactinfo {
     position: relative;
     top: 45px;
+    right: 450px;
 }
 
 .contactinfo h3 {
