@@ -97,6 +97,7 @@ nav {
     text-align: center;
     font-size: 16px;
     color: #5a7c3e;
+    padding-bottom: 20px;
 }
 
 .product-grid {
@@ -161,7 +162,7 @@ nav {
     text-decoration: none;
     color: #F5F5DC;
     background-color: #C4704B;
-    padding: 10px 15px;
+    padding: 15px;
     border-radius: 20px;
 }
 
@@ -174,7 +175,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .search input {
@@ -185,6 +186,7 @@ nav {
     width: 350px;
     margin: 0;
     outline: none;
+    margin-left: 70px;
 }
 
 .bx-search {
@@ -209,19 +211,22 @@ nav {
     font-weight: bold;
     color: #2D5016;
     padding-top: 30px;
-    padding-left: 60px;
 }
 
 .sale {
-    background: #fafafa;
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 90px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+    margin: 30px;
+}
+
+.flash_sale {
+    padding-left: 100px;
 }
 
 .salecard {
+    width: 350px;
     display: inline-block;
     flex-wrap: wrap;
     justify-content: center;
@@ -250,6 +255,30 @@ nav {
     top: 20px;
     font-size: 16px;
     color: #A65D3C;   
+}
+
+#category {
+    color: #2D5016;
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 90px;
+}
+
+.kitchen {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+.cosmetics {
+    display: flex;
+    flex-direction: row;
+     padding-left: 20px;
+}
+.utility {
+    display: flex;
+    flex-direction: row;
+     padding-left: 20px;
 }
 
 .homefoot {
