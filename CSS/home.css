@@ -251,7 +251,7 @@ nav {
 .homefoot {
     background-color: #2C2C2C;
     width: 100%;
-    height: 520px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -261,15 +261,30 @@ nav {
     padding: 20px;
 }
 
+.about {
+    position: relative;
+    top: 45px;
+    right: 450px;
+    width: 350px;
+}
+
+.about h3{
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #87A96B;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .sites  {
     color: #F5F5DC;
     text-decoration: none;
     padding: 10px 15px;
     position: relative;
-    bottom: 148px;
+    bottom: 250px;
     left: 80px;
-    
-    
 }
 
 .sites a {
@@ -294,7 +309,7 @@ nav {
 
 .socialmedia {
     position: relative;
-    /* top: 240px; */
+    bottom: 140px;
 }
 
 .socialmedia a {
@@ -310,8 +325,8 @@ nav {
 
 .contactinfo {
     position: relative;
-    top: 45px;
-    right: 450px;
+    bottom: 45px;
+    left: 450px;
 }
 
 .contactinfo h3 {
