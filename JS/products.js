@@ -109,27 +109,10 @@ const products = [
 const resultContainer = document.getElementById('product-grid');
 const searchInput = document.getElementById("search");
 const searchBtn = document.getElementById("search-btn");
-const originalGridHTML = resultContainer.innerHTML;
  
-function getProductBySearchBar(products) {
-    const search_val = searchInput.value.trim().toLowerCase();
- 
-    if(search_val.length === 0) {
-        resultContainer.innerHTML = originalGridHTML;
-        return;
-    }
- 
-    const matchedProducts = products.filter(product => 
-        product.productName.toLowerCase().includes(search_val)
-    );
-
-    if (matchedProducts.length === 0) {
-        resultContainer.innerHTML = "<p>No products found.</p>";
-        return;
-    }
-
-    resultContainer.innerHTML = matchedProducts.map(product =>
-        `<div class="productcard">
+function renderProducts(list) {
+    resultContainer.innerHTML = list.map(product => `
+        <div class="productcard">
             <div class="productimage">
                 <img src="${product.productImage}" alt="${product.productName}">
             </div>
@@ -138,8 +121,26 @@ function getProductBySearchBar(products) {
                 <p>${product.productDescription}</p>
             </div>
             <div class="price"><span>NPR ${product.productPrice}</span> <a href="#">Buy</a></div>
-        </div>`
-    ).join("");
+        </div>
+    `).join("");
+}
+
+function getProductBySearchBar(products) {
+    const search_val = searchInput.value.trim().toLowerCase();
+ 
+    if(search_val.length === 0) {
+        renderProducts(products);
+        return;
+    }
+ 
+    const matchedProducts = products.filter(product => 
+        product.productName.toLowerCase().includes(search_val)
+    );
+
+    renderProducts(matchedProducts.length ? matchedProducts : []);
+    if (!matchedProducts.length) {
+        resultContainer.innerHTML = "<p>No products found.</p>";
+    }
  
 }
  
@@ -159,6 +160,10 @@ searchInput.addEventListener('keypress', (e) => {
 searchInput.addEventListener('input', () => {
     const val = searchInput.value.trim().toLowerCase();
     if (val.length === 0) {
-        resultContainer.innerHTML = originalGridHTML;
+        renderProducts(products);
     }
 });
+ 
+// initial load
+renderProducts(products);
+
