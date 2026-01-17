@@ -1,0 +1,229 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #2D5016;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.navcontainer a {
+    color: #F5F5DC;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navcontainer ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.navcontainer ul li a:hover {
+    color: #F5F5DC;
+    background-color: #87A96B;
+    border-radius: 10px;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    left: 0px;
+    right: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.navbuttons {
+    display: inline-flex;
+    width: auto;
+    gap: 20px;
+}
+
+.signup {
+    text-decoration: none;
+    color: #F5F5DC;
+    border: 2px solid #F5F5DC;
+    padding: 10px 15px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+}
+
+.signup:hover {
+    background-color: #87A96B;
+}
+
+.bx-cart {
+    font-size: 40px;
+    color: #F5F5DC;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.product-detail {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-detail-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+}
+
+.product-detail-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.product-detail-info h1 {
+    font-size: 28px;
+    color: #2D5016;
+}
+
+.product-detail-info p {
+    font-size: 16px;
+    color: #333333;
+}
+
+.detail-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #C4704B;
+}
+
+.detail-stock.in-stock {
+    color: #2D5016;
+    font-weight: bold;
+}
+
+.detail-stock.out-of-stock {
+    color: #A63C3C;
+    font-weight: bold;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.detail-buy-btn,
+.detail-add-cart-btn {
+    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    background-color: #2D5016;
+    color: #F5F5DC;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.detail-buy-btn:hover {
+    background-color: #254312;
+}
+
+.detail-add-cart-btn {
+    background-color: #C4704B;
+}
+
+.detail-add-cart-btn:hover {
+    background-color: #A65D3C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.detail-extra {
+    margin-top: 20px;
+}
+
+.detail-extra h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2D5016;
+}
+
+.detail-extra ul {
+    padding-left: 20px;
+}
+
+.detail-extra li {
+    margin-bottom: 6px;
+}
+
+.detail-related {
+    max-width: 1000px;
+    margin: 20px auto 60px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.detail-related h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #2D5016;
+}
+
+.detail-benefits {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.benefit-card {
+    flex: 1 1 250px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+}
+
+.benefit-card h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #2D5016;
+}
+
+.benefit-card p {
+    font-size: 14px;
+    color: #333333;
+}
+

@@ -148,9 +148,11 @@ nav {
 }
 
 .productcard {
-    width: 350px;
+    width: 400px;
+    height: 500px;
     align-content: center;
-    margin-left: 60px;
+    margin-left: 40px;
+    margin-bottom: 30px;
     background: white;
     overflow: hidden;
     border-radius: 15px;
@@ -185,10 +187,25 @@ nav {
     border-bottom: 1px solid #eee;
 }
 
+#cart-btn {
+    background-color: #C4704B;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    gap: 10px;
+}
+
+#cart-btn:hover {
+    background-color: #A65D3C;
+}
+
 .price {
     font-size: 20px;
     font-weight: bold;
     padding: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .price span {
@@ -196,7 +213,7 @@ nav {
     padding: 30px;
 }
 
-.price a {
+#buy-btn {
     text-decoration: none;
     color: #F5F5DC;
     background-color: #C4704B;
@@ -204,8 +221,18 @@ nav {
     border-radius: 20px;
 }
 
-.price a:hover {
+#buy-btn:hover {
     background-color: #A65D3C;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+.product-link h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2D5016;
 }
 
 .flash_sale h2 {

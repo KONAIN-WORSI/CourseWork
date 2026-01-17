@@ -4,105 +4,105 @@ const products = [
         productImage: "../Images/vecteezy_wooden-bowl-and-plates_1759115.jpg",
         productDescription: "A wooden base product for eco-friendly customer",
         productPrice:450,
-        
+        isStock: true
     },
     {
         productName: "A Shopping Bag",
         productImage: "../Images/vecteezy_woman-holding-blank-empty-canvas-bag-for-shopping-eco_33333279.jpg",
-        productDescription: "Lightweight, durable and eco-friendly shopping bag",
+        productDescription: "Lightweight, durable eco-friendly shopping bag",
         productPrice:999,
-        
+        isStock: true
     },
     {
         productName: "A Reusable Bamboo Cutlery Combo",
         productImage: "../Images/vecteezy_eco-friendly-food-packaging-on-table-background-natural_7781420.jpg",
         productDescription: "Lightweight, durable, and perfect for on-the-go.",
         productPrice:660,
-        
+        isStock: true
     },
     {
         productName: "A Herbal Cream",
         productImage: "../Images/vecteezy_a-stylish-ad-of-a-white-template-podium-mockup-of-a-natural_44424963.jpeg",
         productDescription: "An eco-friendly cream for enlightment of the skin",
         productPrice:2350,
-        
+        isStock: true
     },
     {
         productName: "Kitchen Utensils Combo",
         productImage: "../Images/vecteezy_kitchen-utensils-in-restaurant-with-a-blank-space-for-a-text_3306199.JPG",
-        productDescription: "A set of kitchen utensils for all your cooking needs.",
+        productDescription: "A set of kitchen utensils for all cooking needs.",
         productPrice:3520,
-        
+        isStock: true
     },
     {
         productName: "A Glass Bottle",
         productImage: "../Images/vecteezy_blue-glass-water-bottle-with-stainless-steel-lid_48160215.jpg",
         productDescription: "A glass bottle for all your eco-friendly needs.",
         productPrice:180,
-        
+        isStock: true
     },
     {
         productName: "A Dinnerware Set",
         productImage: "../Images/71A8dpVbDQL._AC_SL1500_.jpg",
         productDescription: "A set of dinnerware for all your cooking needs.",
         productPrice:1400,
-        
+        isStock: false
     },
     {
         productName: "A Spatula Set",
         productImage: "../Images/713BZqnwTxL._AC_SL1500_.jpg",
         productDescription: "A set of spatulas for all your cooking needs.",
         productPrice:2500,
-        
+        isStock: true
     },
     {
         productName: "A Set of Disposable Utensils",
         productImage: "../Images/71q1iv1eBDL._AC_SL1500_.jpg",
-        productDescription: "A set of disposable utensils for all your cooking needs.",
+        productDescription: "A set of disposable utensils for all cooking needs.",
         productPrice:699,
-        
+        isStock: true
     },
     {
         productName: "A Set of Bathroom Utility",
         productImage: "../Images/vecteezy_blue-and-white-bathroom-products-with-greenery-and-white_46097424.jpeg",
         productDescription: "A set of bathroom utility for all your needs.",
         productPrice:1699,
-        
+        isStock: false
     },
     {
         productName: "A Combo of Jade Roller",
         productImage: "../Images/vecteezy_face-massage-jade-roller-on-pastel-green-background_2248363.jpg",
         productDescription: "A combo of jade roller for all your needs.",
         productPrice:599,
-        
+        isStock: true
     },
     {
         productName: "A Bamboo Mixing Bowl",
         productImage: "../Images/510akIiofJS._AC_SX679_.jpg",
         productDescription: "A bamboo mixing bowl for all your needs.",
         productPrice:200,
-        
+        isStock: true
     },
     {
         productName: "A Fabric T-shirt",
         productImage: "../Images/vecteezy_grey-t-shirt-for-mockup-design_30366120.jpg",
         productDescription: "A fabric t-shirt for all your needs.",
         productPrice:399,
-        
+        isStock: true
     },
     {
         productName: "A Combo of Tooth Brush",
         productImage: "../Images/Toothbrush_1.jpg",
         productDescription: "A combo of tooth brush for all your needs.",
         productPrice:420,
-        
+        isStock: true
     },
     {
         productName: "A Bamboo Bottle",
         productImage: "../Images/360_F_598937200_U2WT8Tp5E2zUIChfQtZ9a4hIGn54pJYA.jpg",
         productDescription: "A bamboo bottle for all your needs.",
         productPrice:300,
-        
+        isStock: true
     }
 ]
  
@@ -111,18 +111,31 @@ const searchInput = document.getElementById("search");
 const searchBtn = document.getElementById("search-btn");
  
 function renderProducts(list) {
-    resultContainer.innerHTML = list.map(product => `
+    resultContainer.innerHTML = list.map(product => {
+        const detailImagePath = product.productImage.replace('../Images/', '../../Images/');
+        return `
         <div class="productcard">
-            <div class="productimage">
-                <img src="${product.productImage}" alt="${product.productName}">
+            <a 
+                href="products/productDetail.html?name=${encodeURIComponent(product.productName)}&image=${encodeURIComponent(detailImagePath)}&description=${encodeURIComponent(product.productDescription)}&price=${encodeURIComponent(product.productPrice)}&stock=${encodeURIComponent(product.isStock)}" 
+                class="product-link">
+                <div class="productimage">
+                    <img src="${product.productImage}" alt="${product.productName}">
+                </div>
+                <div class="productinfo">
+                    <h3>${product.productName}</h3>
+                    <p>${product.productDescription}</p>
+                </div>
+            </a>
+            <div class="price">
+                <span>NPR ${product.productPrice}</span>
+                <a href="#" id="buy-btn">Buy</a>
+                <a href="#" class="add-to-cart" data-in-stock="${product.isStock}">
+                    <i class='bx bx-cart'id="cart-btn"></i>
+                </a>
             </div>
-            <div class="productinfo">
-                <h3>${product.productName}</h3>
-                <p>${product.productDescription}</p>
-            </div>
-            <div class="price"><span>NPR ${product.productPrice}</span> <a href="#">Buy</a></div>
         </div>
-    `).join("");
+    `;
+    }).join("");
 }
 
 function getProductBySearchBar(products) {
@@ -163,7 +176,23 @@ searchInput.addEventListener('input', () => {
         renderProducts(products);
     }
 });
- 
+
+resultContainer.addEventListener('click', (e) => {
+    const cartLink = e.target.closest('.add-to-cart');
+    if (!cartLink) return;
+    e.preventDefault();
+    const inStock = cartLink.dataset.inStock === 'true';
+    if (inStock) {
+        alert('Your Product has been successfully added to the cart!');
+    } else {
+        alert('Your Product is out of stock!');
+    }
+});
+
+
 // initial load
 renderProducts(products);
+
+
+
 

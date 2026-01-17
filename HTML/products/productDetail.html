@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <link rel="stylesheet" href="../../CSS/products.css">
+    <link rel="stylesheet" href="../../CSS/products/productDetail.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../home.html" class="logo">EcoMart 🌿</a>
+            <div class="navcontainer">
+                <ul>
+                    <li><a href="../home.html" target="_self">Home</a></li>
+                    <li><a href="../products.html" target="_self">Products</a></li>
+                    <li><a href="../blog.html" target="_self">Blog</a></li>
+                    <li><a href="../research.html" target="_self">Research</a></li>
+                    <li><a href="../about.html" target="_self">About Us</a></li>
+                    <li><a href="../contact.html" target="_self">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <a href="#"><i class='bx  bx-cart'></i></a>
+                <a href="../signin.html" target="_self" class="btn signup">Sign In</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="product-detail">
+            <div class="product-detail-image">
+                <img id="detail-image" src="" alt="">
+            </div>
+            <div class="product-detail-info">
+                <h1 id="detail-name"></h1>
+                <p id="detail-description"></p>
+                <p id="detail-price" class="detail-price"></p>
+                <p id="detail-stock" class="detail-stock"></p>
+                <div class="detail-actions">
+                    <button class="detail-buy-btn">Buy Now</button>
+                    <button class="detail-add-cart-btn" id="detail-add-cart-btn">
+                        <i class='bx bx-cart'></i> Add to Cart
+                    </button>
+                </div>
+                <div class="detail-extra">
+                    <h3>Product Highlights</h3>
+                    <ul>
+                        <li>Eco-friendly and sustainable materials</li>
+                        <li>Carefully sourced for quality and durability</li>
+                        <li>Perfect for everyday use and gifting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="detail-related">
+            <h2>Why Shop at EcoMart?</h2>
+            <div class="detail-benefits">
+                <div class="benefit-card">
+                    <h4>Eco-Friendly</h4>
+                    <p>All products are selected with sustainability in mind.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Quality Assured</h4>
+                    <p>Trusted brands and materials that last longer.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Fast Support</h4>
+                    <p>We are here to help you with any questions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="homefoot">
+            <div class="footcontent">
+                <div class="about">
+                    <h3>About EcoMart</h3>
+                    <p>Your one-stop store for sustainable, quality life products</p>
+                </div>
+                <div class="contactinfo">
+                    <h3>Contact Us</h3>
+                    <p><i class='bx  bx-envelope'></i> Email: contact@ecomart.com</p>
+                    <p><i class='bx  bx-phone'></i> Phone: +977 9812243648, +977 9842069785</p>
+                    <p><i class='bx  bx-location'></i>  Location: Itahari, Nepal</p>
+                </div>
+                <div class="sites">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../home.html" target="_self">Home</a></li>
+                        <li><a href="../products.html" target="_self">Products</a></li>
+                        <li><a href="../about.html" target="_self">About Us</a></li>
+                        <li><a href="../contact.html" target="_self">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="socialmedia">
+                    <p>&copy; 2025 EcoMart. All rights reserved.</p>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../JS/productDetail.js"></script>  
+</body>
+</html>
