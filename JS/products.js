@@ -115,8 +115,7 @@ function renderProducts(list) {
         const detailImagePath = product.productImage.replace('../Images/', '../../Images/');
         return `
         <div class="productcard">
-            <a 
-                href="products/productDetail.html?name=${encodeURIComponent(product.productName)}&image=${encodeURIComponent(detailImagePath)}&description=${encodeURIComponent(product.productDescription)}&price=${encodeURIComponent(product.productPrice)}&stock=${encodeURIComponent(product.isStock)}" 
+            <a  href="products/productDetail.html?name=${encodeURIComponent(product.productName)}&image=${encodeURIComponent(detailImagePath)}&description=${encodeURIComponent(product.productDescription)}&price=${encodeURIComponent(product.productPrice)}&stock=${encodeURIComponent(product.isStock)}" 
                 class="product-link">
                 <div class="productimage">
                     <img src="${product.productImage}" alt="${product.productName}">

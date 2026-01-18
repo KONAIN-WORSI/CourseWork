@@ -114,7 +114,7 @@ nav {
 }
 
 .hero_track {
-    display: flex;
+    display: inline-flex;
     height: 100%;
     animation: heroslide 30s linear infinite;
 }
