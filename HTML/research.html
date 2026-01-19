@@ -3,14 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Page</title>
+    <title>Research Page</title>
     <link rel="stylesheet" href="../CSS/research.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .header {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+        .header p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .navbar {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        #reference {
+            padding-bottom: 50px;
+            width: 30%;
+            padding-right: 60px;
+        }
+
+        #own {
+            padding-bottom: 50px;
+            width: 30%;
+        
+        }
+
+        .herosection {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .herosection h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .featureproduct {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .featureproduct h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .footersection {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .footersection h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .productsection {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .productsection h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .productdetailsec {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .productdetailsec h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .contactsec {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .contactsec h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+
+        .signupsec {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .signupsec h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2D5016;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">EcoMart 🌿</a>
+            <a href="home.html" class="logo">EcoMart 🌿</a>
             <div class="navcontainer">
                 <ul>
                     <li><a href="home.html" target="_self">Home</a></li>
@@ -23,10 +161,345 @@
             </div>
             <div class="buttons">
                 <a href="#"><i class='bx  bx-cart'></i></a>
-                <a href="#" class="btn signup">Sign In</a>
+                <a href="signin.html" class="btn signup">Sign In</a>
             </div>
         </nav>
     </header>
-    
+    <main>
+        <section class="reseacrh">
+            <div class="header">
+                <h1>Research</h1>
+                <p>Discover how each element of this website has been built to provide you with the best shopping experience possible.</p>
+            </div>
+            <div class="navbar">
+                <h3>Navbar Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 190153.png" alt="" id="reference">
+                <img src="../Images/Screenshot 2026-01-19 190218.png" alt="" id="own">
+                <table border="1" cellpadding="10" cellspacing="10" style="width: 60%; border-collapse: collapse; text-align: left;margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                        <th>Feature</th>
+                        <th>EcoMart Navbar</th>
+                        <th>Daraz Navbar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Branding Style</td>
+                            <td>Text logo "EcoMart" with a small leaf icon</td>
+                            <td>Graphic logo icon with the brand name "Daraz"</td>
+                        </tr>
+                        <tr>
+                            <td>Color Scheme</td>
+                            <td>Dark green background with light text</td>
+                            <td>Bright orange background with white text</td>
+                        </tr>
+                        <tr>
+                            <td>Search Bar</td>
+                            <td>No search bar in the navbar</td>
+                            <td>Large central search bar with placeholder text</td>
+                        </tr>
+                        <tr>
+                            <td>Navigation Links</td>
+                            <td>Home, Products, Blog, Research, About Us, Contact Us</td>
+                            <td>Save More on App, Become a Seller, Help & Support, Login, Sign Up</td>
+                        </tr>
+                        <tr>
+                            <td>User Actions</td>
+                            <td>Cart icon and a rounded "Sign In" button</td>
+                            <td>Cart icon and text links for Login and Sign Up</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="herosection">
+                <h3>Hero Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 193242.png" alt="" id="reference">
+                <img src="../Images/Screenshot 2026-01-19 193307.png" alt="" id="own">
+                <table border="1" cellpadding="10" cellspacing="10" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px; ">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>EcoMart Hero</th>
+                            <th>The Honest Company Hero</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Background Type</td>
+                            <td>Flat-lay product photography (overhead view)</td>
+                            <td>Lifestyle photography with human subjects</td>
+                        </tr>
+                        <tr>
+                            <td>Text Alignment</td>
+                            <td>Center-aligned</td>
+                            <td>Right-aligned</td>
+                        </tr>
+                        <tr>
+                            <td>Heading Style</td>
+                            <td>Serif font, traditional, centered</td>
+                            <td>Sans-serif font, modern, right-aligned</td>
+                        </tr>
+                        <tr>
+                            <td>CTA Button Color</td>
+                            <td>Coral/terracotta orange</td>
+                            <td>White with dark text</td>
+                        </tr>
+                        <tr>
+                            <td>Visual Strategy</td>
+                            <td>Product-first approach</td>
+                            <td>Lifestyle/emotion-first approach</td>
+                        </tr>
+                    </tbody>
+              </table>
+            </div>
+            <div class="featureproduct">
+                <h3>Feature Product Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 200440.png" alt="" id="reference">
+                <img src="../Images/Screenshot (5).png" alt="" id="own">
+                <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>The Refill Shoppe</th>
+                            <th>EcoMart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product Card Background</td>
+                            <td>Light gray/off-white background</td>
+                            <td>Pure white background with shadow</td>
+                        </tr>
+                        <tr>
+                            <td>Product Images</td>
+                            <td>Clean product photos on solid light background</td>
+                            <td>Lifestyle/flat-lay photography with props and plants</td>
+                        </tr>
+                        <tr>
+                            <td>Category Labels</td>
+                            <td>No visible category labels on product cards</td>
+                            <td>Green category badges (Home, Cosmetics, Utility)</td>
+                        </tr>
+                        <tr>
+                            <td>Section Header</td>
+                            <td>No visible section title in the screenshot</td>
+                            <td>"Featured Products" with leaf icons and subtitle</td>
+                        </tr>
+                        <tr>
+                            <td>Product Card Style</td>
+                            <td>Minimalist with heart icon, clean layout</td>
+                            <td>Cards with rounded corners and drop shadows</td>
+                        </tr>
+                    </tbody>
+               </table>
+            </div>
+            <div class="footersection">
+                <h3>Footer Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 201822.png" alt="" id="reference">
+                <img src="../Images/Screenshot 2026-01-19 201915.png" alt="" id="own">
+                 <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>EcoMart Footer</th>
+                            <th>Blueland Footer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Background Color</td>
+                            <td>Dark grey/charcoal background (#3a3a3a)</td>
+                            <td>Dark teal/navy blue background (#0a3d4e)</td>
+                        </tr>
+                        <tr>
+                            <td>Column Structure</td>
+                            <td>3 columns: About EcoMart, Quick Links, Contact Us</td>
+                            <td>4 columns: Email signup, Shop, About, Help</td>
+                        </tr>
+                        <tr>
+                            <td>Newsletter/Subscription</td>
+                            <td>No email subscription form</td>
+                            <td>Email subscription form with input field and submit button</td>
+                        </tr>
+                        <tr>
+                            <td>Social Media Icons Position</td>
+                            <td>Bottom center, below copyright text</td>
+                            <td>Top left, below subscription form</td>
+                        </tr>
+                        <tr>
+                            <td>Footer Content Depth</td>
+                            <td>Minimal links (4 quick links, basic contact info)</td>
+                            <td>Extensive links (multiple categories with 5-8 links each)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="productsection">
+                <h3>Product Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 203136.png" alt=""id="reference">
+                <img src="../Images/Screenshot 2026-01-19 202705.png" alt=""id="own">
+                <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>Zero Waste Store</th>
+                            <th>EcoMart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Section Header</td>
+                            <td>No visible section title or subtitle</td>
+                            <td>"Our Products" heading with subtitle text</td>
+                        </tr>
+                        <tr>
+                            <td>Search Bar</td>
+                            <td>No fixed search bar visible</td>
+                            <td>Central search bar with filter icon</td>
+                        </tr>
+                        <tr>
+                            <td>Product Card Information</td>
+                            <td>Brand name, star ratings, review count, product name, and price</td>
+                            <td>Product name, description, price, and action buttons only</td>
+                        </tr>
+                        <tr>
+                            <td>Action Buttons on Cards</td>
+                            <td>Heart icon for wishlist, "Quick view" and "Quick Shop" buttons</td>
+                            <td>"Buy" button and cart icon button</td>
+                        </tr>
+                        <tr>
+                            <td>Grid View Options</td>
+                            <td>Multiple grid view toggle buttons and sorting dropdown visible</td>
+                            <td>No visible grid view options or sorting controls</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="productdetailsec">
+                <h3>Product Detail Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 204109.png" alt="" id="reference">
+                <img src="../Images/Screenshot 2026-01-19 204202.png" alt="" id="own">
+                <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>Zero Waste Store</th>
+                            <th>EcoMart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product Image Style</td>
+                            <td>Multiple product images with navigation arrows and thumbnail gallery</td>
+                            <td>Single product image with colored background and plant decoration</td>
+                        </tr>
+                        <tr>
+                            <td>Reviews & Ratings</td>
+                            <td>Star rating with review count (21 reviews) displayed prominently</td>
+                            <td>No visible star ratings or review count</td>
+                        </tr>
+                        <tr>
+                            <td>Call-to-Action Buttons</td>
+                            <td>Single promotional button with offer text (Buy 6, Get 1 Free)</td>
+                            <td>Two buttons: "Buy Now" (dark green) and "Add to Cart" (terracotta)</td>
+                        </tr>
+                        <tr>
+                            <td>Product Details Format</td>
+                            <td>Detailed paragraph description followed by extensive bullet points</td>
+                            <td>Simple bullet points under "Product Highlights" heading</td>
+                        </tr>
+                        <tr>
+                            <td>Additional Information</td>
+                            <td>Sustainability icons with labels, delivery information, and breadcrumb navigation</td>
+                            <td>"Why Shop at EcoMart?" section with three feature cards below</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contactsec">
+                <h3>Contact Us Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 210517.png" alt="" id="reference">
+                <img src="../Images/Screenshot 2026-01-19 205458.png" alt="" id="own">
+                <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>Wild Minimalist </th>
+                            <th>EcoMart </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Form Container Style</td>
+                            <td>No visible container or card, left-aligned on white background</td>
+                            <td>Centered card with rounded corners, shadow, and light background</td>
+                        </tr>
+                        <tr>
+                            <td>Input Field Borders</td>
+                            <td>Sharp rectangular corners with black borders</td>
+                            <td>Rounded corners with soft green/grey borders</td>
+                        </tr>
+                        <tr>
+                            <td>Submit Button Style</td>
+                            <td>Small rectangular button with peach/orange color, black text "SEND"</td>
+                            <td>Full-width rounded button with muted green color, white text "Submit"</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Information</td>
+                            <td>Email address and response time displayed above form</td>
+                            <td>No contact information visible, only the form</td>
+                        </tr>
+                        <tr>
+                            <td>Form Header</td>
+                            <td>Simple "Contact Us" text heading in black</td>
+                            <td>"Contact Us Form" with underline decoration in green/grey color</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="signupsec">
+                <h3>Sign Up Section</h3>
+                <img src="../Images/Screenshot 2026-01-19 212030.png" alt="" id="reference">
+                <img src="../Images/Screenshot 2026-01-19 211650.png" alt="" id="own">
+                 <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; border-collapse: collapse; text-align: left; margin: 0 auto; margin-bottom: 40px;">
+                    <thead>
+                        <tr style="background-color:#f2f2f2;">
+                            <th>Feature</th>
+                            <th>Pela Case</th>
+                            <th>EcoMart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Form Container Style</td>
+                            <td>No visible card/container, simple white background</td>
+                            <td>Centered card with rounded corners, shadow, and light background</td>
+                        </tr>
+                        <tr>
+                            <td>Form Fields</td>
+                            <td>Four fields: First Name, Last Name, Email Address, Password</td>
+                            <td>Four fields: Name, Email, Address, Password</td>
+                        </tr>
+                        <tr>
+                            <td>Input Field Labels</td>
+                            <td>Labels positioned as legends/borders (fieldset style) with blue accent</td>
+                            <td>Labels positioned above inputs in simple text format</td>
+                        </tr>
+                        <tr>
+                            <td>Additional Links</td>
+                            <td>"Already have an account? Log In" link below button</td>
+                            <td>No additional links or text below button</td>
+                        </tr>
+                        <tr>
+                            <td>Form Title Decoration</td>
+                            <td>Simple "Sign Up" heading with no underline</td>
+                            <td>"Sign In Form" heading with horizontal line decoration underneath</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

@@ -338,3 +338,59 @@ nav {
     color: #87A96B;
 }
 
+/* Why Choose EcoMart Section */
+.detail-related {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.detail-related h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2D5016;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.detail-benefits {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.benefit-card {
+    flex: 1 1 250px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.benefit-card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.benefit-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+

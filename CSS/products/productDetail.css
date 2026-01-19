@@ -190,40 +190,59 @@ nav {
 }
 
 .detail-related {
-    max-width: 1000px;
-    margin: 20px auto 60px;
+    max-width: 1200px;
+    margin: 40px auto 80px;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .detail-related h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-    color: #2D5016;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: left;
+    border-bottom: 2px solid #2D5016;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .detail-benefits {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .benefit-card {
     flex: 1 1 250px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: none;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
 .benefit-card h4 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #2D5016;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
 }
 
 .benefit-card p {
-    font-size: 14px;
-    color: #333333;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
 }
 

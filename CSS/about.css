@@ -254,3 +254,64 @@ main {
     color: #87A96B;
 }
 
+/* About Intro Section */
+.about-intro {
+    max-width: 1100px;
+    margin: 20px auto 60px auto;
+    padding: 0 10px;
+}
+
+.intro-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.intro-text {
+    flex: 1 1 500px;
+}
+
+.intro-text h1 {
+    font-size: 36px;
+    color: #2D5016;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.intro-image {
+    flex: 1 1 300px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F5F5DC; /* Cream color to stand out */
+    text-shadow: 2px 2px 5px rgba(45, 80, 22, 0.8); /* Dark green shadow for contrast */
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    background-color: rgba(45, 80, 22, 0.3); /* Slight dark background for readability */
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
