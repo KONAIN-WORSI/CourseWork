@@ -105,92 +105,119 @@ const products = [
         isStock: true
     }
 ]
- 
-const resultContainer = document.getElementById('product-grid');
-const searchInput = document.getElementById("search");
-const searchBtn = document.getElementById("search-btn");
- 
-function renderProducts(list) {
-    resultContainer.innerHTML = list.map(product => {
-        const detailImagePath = product.productImage.replace('../Images/', '../../Images/');
-        return `
-        <div class="productcard">
-            <a  href="products/productDetail.html?name=${encodeURIComponent(product.productName)}&image=${encodeURIComponent(detailImagePath)}&description=${encodeURIComponent(product.productDescription)}&price=${encodeURIComponent(product.productPrice)}&stock=${encodeURIComponent(product.isStock)}" 
-                class="product-link">
-                <div class="productimage">
-                    <img src="${product.productImage}" alt="${product.productName}">
-                </div>
-                <div class="productinfo">
-                    <h3>${product.productName}</h3>
-                    <p>${product.productDescription}</p>
-                </div>
-            </a>
-            <div class="price">
-                <span>NPR ${product.productPrice}</span>
-                <a href="#" id="buy-btn">Buy</a>
-                <a href="#" class="add-to-cart" data-in-stock="${product.isStock}">
-                    <i class='bx bx-cart'id="cart-btn"></i>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const resultContainer = document.getElementById('product-grid');
+    const searchInput = document.getElementById("search");
+    const searchBtn = document.getElementById("search-btn");
+     
+    function renderProducts(list) {
+        resultContainer.innerHTML = list.map(product => {
+            const detailImagePath = product.productImage.replace('../Images/', '../../Images/');
+            return `
+            <div class="productcard">
+                <a  href="products/productDetail.html?name=${encodeURIComponent(product.productName)}&image=${encodeURIComponent(detailImagePath)}&description=${encodeURIComponent(product.productDescription)}&price=${encodeURIComponent(product.productPrice)}&stock=${encodeURIComponent(product.isStock)}" 
+                    class="product-link">
+                    <div class="productimage">
+                        <img src="${product.productImage}" alt="${product.productName}">
+                    </div>
+                    <div class="productinfo">
+                        <h3>${product.productName}</h3>
+                        <p>${product.productDescription}</p>
+                    </div>
                 </a>
+                <div class="price">
+                    <span>NPR ${product.productPrice}</span>
+                    <a href="#" id="buy-btn">Buy</a>
+                    <a href="#" class="add-to-cart" data-in-stock="${product.isStock}" data-name="${product.productName}" data-price="${product.productPrice}" data-image="${product.productImage}">
+                        <i class='bx bx-cart'id="cart-btn"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    `;
-    }).join("");
-}
-
-function getProductBySearchBar(products) {
-    const search_val = searchInput.value.trim().toLowerCase();
- 
-    if(search_val.length === 0) {
-        renderProducts(products);
-        return;
+        `;
+        }).join("");
     }
- 
-    const matchedProducts = products.filter(product => 
-        product.productName.toLowerCase().includes(search_val)
-    );
-
-    renderProducts(matchedProducts.length ? matchedProducts : []);
-    if (!matchedProducts.length) {
-        resultContainer.innerHTML = "<p>No products found.</p>";
+    
+    function getProductBySearchBar(products) {
+        const search_val = searchInput.value.trim().toLowerCase();
+     
+        if(search_val.length === 0) {
+            renderProducts(products);
+            return;
+        }
+     
+        const matchedProducts = products.filter(product => 
+            product.productName.toLowerCase().includes(search_val)
+        );
+    
+        renderProducts(matchedProducts.length ? matchedProducts : []);
+        if (!matchedProducts.length) {
+            resultContainer.innerHTML = "<p>No products found.</p>";
+        }
+     
     }
- 
-}
- 
- 
-searchBtn.addEventListener('click', () => {
-    getProductBySearchBar(products)
- 
-});
- 
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === "Enter") {
+     
+     
+    searchBtn.addEventListener('click', () => {
+        getProductBySearchBar(products)
+     
+    });
+     
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            getProductBySearchBar(products);
+        }
+    });
+     
+    searchInput.addEventListener('input', () => {
+        const val = searchInput.value.trim().toLowerCase();
+        if (val.length === 0) {
+            renderProducts(products);
+        }
+    });
+    
+    resultContainer.addEventListener('click', (e) => {
+        const cartLink = e.target.closest('.add-to-cart');
+        if (!cartLink) return;
         e.preventDefault();
-        getProductBySearchBar(products);
+        const inStock = cartLink.dataset.inStock === 'true';
+        
+        if (inStock) {
+            const product = {
+                name: cartLink.dataset.name,
+                price: parseFloat(cartLink.dataset.price),
+                image: cartLink.dataset.image,
+                quantity: 1
+            };
+    
+            addToCart(product);
+            alert('Your Product has been successfully added to the cart!');
+        } else {
+            alert('Your Product is out of stock!');
+        }
+    });
+    
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        const existingProductIndex = cart.findIndex(item => item.name === product.name);
+        
+        if (existingProductIndex > -1) {
+            cart[existingProductIndex].quantity += 1;
+        } else {
+            cart.push(product);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
-});
- 
-searchInput.addEventListener('input', () => {
-    const val = searchInput.value.trim().toLowerCase();
-    if (val.length === 0) {
-        renderProducts(products);
-    }
-});
+    
+    
+    // initial load
+    renderProducts(products);
+})
 
-resultContainer.addEventListener('click', (e) => {
-    const cartLink = e.target.closest('.add-to-cart');
-    if (!cartLink) return;
-    e.preventDefault();
-    const inStock = cartLink.dataset.inStock === 'true';
-    if (inStock) {
-        alert('Your Product has been successfully added to the cart!');
-    } else {
-        alert('Your Product is out of stock!');
-    }
-});
-
-
-// initial load
-renderProducts(products);
 
 
 

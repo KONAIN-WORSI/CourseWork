@@ -13,6 +13,21 @@ const IsValidateForm = () => {
         alert("Please fill in all fields");
         return false;
     }
+
+    if(!isNaN(name)) {
+        alert("Please enter a valid name")
+        return false;
+    }
+
+    if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+    
+    if(message.length < 10) {
+        alert("Please enter a valid message")
+        return false;
+    }
     
     alert("Your message has been successfulllty sent!");
     return true;
