@@ -66,4 +66,4 @@ function removeItem(index) {
 }
 
 // Initial load
-loadCart();
+document.addEventListener('DOMContentLoaded', loadCart);

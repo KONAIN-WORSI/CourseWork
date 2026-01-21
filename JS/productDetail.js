@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const existingProductIndex = cart.findIndex(item => item.name === product.name);
         
-        if (existingProductIndex > -1) {
+        if (existingProductIndex >= 0) {
             cart[existingProductIndex].quantity += 1;
         } else {
             cart.push(product);

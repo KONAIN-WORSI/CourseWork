@@ -1,40 +1,40 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const addToCartBtn = document.querySelectorAll('.add-to-cart')
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const card = button.closest('.productcard');
-            const name = card.querySelector('.productinfo h3').innerText;
-            const priceText = card.querySelector('.price span').innerText;
-            const price = parseFloat(priceText.replace('NPR', '').trim());
-            const imageElement = card.querySelector('.productimage img');
-            const image = imageElement.getAttribute('src');
+const card = document.querySelectorAll('.productcard')
+const productInfo = document.querySelectorAll('.productinfo')
+const productPrice = document.querySelectorAll('.price')
+const productImage = document.querySelectorAll('.productimage')
 
-            const product = {
-                name: name,
-                price: price,
-                image: image,
-                quantity: 1
-            };
 
-            addToCart(product);
-            alert('Your Product has been successfully added to the cart!');
-        });
-    });
-});
+addToCartBtn.forEach((btn, index) => {
+    btn.addEventListener('click' , (e) => {
+        e.preventDefault();
+        const name = productInfo[index].querySelector('h3').textContent.trim();
+        const priceString = productPrice[index].querySelector('span').textContent.trim();
+        const price = parseFloat(priceString.replace('NPR', '').trim());   
+        const image = productImage[index].querySelector('img').getAttribute('src');
 
-function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    const existingProductIndex = cart.findIndex(item => item.name === product.name);
-    
-    if (existingProductIndex > -1) {
-        cart[existingProductIndex].quantity += 1;
-    } else {
-        cart.push(product);
+        const product = {
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1
+        }
+
+        addToCart(product)
+        alert('Product added to cart')
+
+    })
+
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingProduct = cart.find(item => item.name === product.name);
+        
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            cart.push(product);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
+})

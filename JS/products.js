@@ -106,8 +106,6 @@ const products = [
     }
 ]
 
-document.addEventListener("DOMContentLoaded", function() {
-
     const resultContainer = document.getElementById('product-grid');
     const searchInput = document.getElementById("search");
     const searchBtn = document.getElementById("search-btn");
@@ -177,48 +175,43 @@ document.addEventListener("DOMContentLoaded", function() {
             renderProducts(products);
         }
     });
+
+    renderProducts(products);
     
     resultContainer.addEventListener('click', (e) => {
-        const cartLink = e.target.closest('.add-to-cart');
-        if (!cartLink) return;
+        const cartLink = e.target.closest('.add-to-cart')
+
+        if(!cartLink) return;
         e.preventDefault();
-        const inStock = cartLink.dataset.inStock === 'true';
-        
-        if (inStock) {
+        const InStock = cartLink.dataset.inStock === 'true';
+
+        if(InStock) {
             const product = {
                 name: cartLink.dataset.name,
                 price: parseFloat(cartLink.dataset.price),
                 image: cartLink.dataset.image,
                 quantity: 1
             };
-    
             addToCart(product);
-            alert('Your Product has been successfully added to the cart!');
+            alert('Product added to cart!');
         } else {
-            alert('Your Product is out of stock!');
+            alert('Product is out of stock!');
         }
-    });
+    })
     
     function addToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existingProduct = cart.find(item => item.name === product.name);
         
-        const existingProductIndex = cart.findIndex(item => item.name === product.name);
-        
-        if (existingProductIndex > -1) {
-            cart[existingProductIndex].quantity += 1;
-        } else {
-            cart.push(product);
+        if(existingProduct) {
+            existingProduct.quantity += 1;
+        }else {
+            cart.push(product)
         }
-        
+
         localStorage.setItem('cart', JSON.stringify(cart));
     }
-    
-    
-    // initial load
-    renderProducts(products);
-})
-
-
 
 
 
