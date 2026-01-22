@@ -109,6 +109,9 @@ const products = [
     const resultContainer = document.getElementById('product-grid');
     const searchInput = document.getElementById("search");
     const searchBtn = document.getElementById("search-btn");
+    const buyBtn = document.querySelectorAll(".buy-btn");
+    const filterBtn = document.querySelectorAll(".bx-filter");
+    
      
     function renderProducts(list) {
         resultContainer.innerHTML = list.map(product => {
@@ -127,7 +130,7 @@ const products = [
                 </a>
                 <div class="price">
                     <span>NPR ${product.productPrice}</span>
-                    <a href="#" id="buy-btn">Buy</a>
+                    <a href="#" class="buy-btn" data-in-stock="${product.isStock}">Buy</a>
                     <a href="#" class="add-to-cart" data-in-stock="${product.isStock}" data-name="${product.productName}" data-price="${product.productPrice}" data-image="${product.productImage}">
                         <i class='bx bx-cart'id="cart-btn"></i>
                     </a>
@@ -137,6 +140,25 @@ const products = [
         }).join("");
     }
     
+    let isSorted = false;
+
+    filterBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!isSorted) {
+                const sortedProducts = [...products].sort((a, b) => a.productPrice - b.productPrice);
+                renderProducts(sortedProducts);
+                showToast('Products filtered: Low to High', 'success');
+                isSorted = true;
+            } else {
+                renderProducts(products);
+                showToast('Products reset to default', 'success');
+                isSorted = false;
+            }
+        });
+    });
+
+
+
     function getProductBySearchBar(products) {
         const search_val = searchInput.value.trim().toLowerCase();
      
@@ -176,26 +198,37 @@ const products = [
         }
     });
 
-    renderProducts(products);
+renderProducts(products);
     
     resultContainer.addEventListener('click', (e) => {
-        const cartLink = e.target.closest('.add-to-cart')
+        const cartLink = e.target.closest('.add-to-cart');
+        const buyLink = e.target.closest('.buy-btn');
 
-        if(!cartLink) return;
-        e.preventDefault();
-        const InStock = cartLink.dataset.inStock === 'true';
+        if (cartLink) {
+            e.preventDefault();
+            const InStock = cartLink.dataset.inStock === 'true';
 
-        if(InStock) {
-            const product = {
-                name: cartLink.dataset.name,
-                price: parseFloat(cartLink.dataset.price),
-                image: cartLink.dataset.image,
-                quantity: 1
-            };
-            addToCart(product);
-            alert('Product added to cart!');
-        } else {
-            alert('Product is out of stock!');
+            if(InStock) {
+                const product = {
+                    name: cartLink.dataset.name,
+                    price: parseFloat(cartLink.dataset.price),
+                    image: cartLink.dataset.image,
+                    quantity: 1
+                };
+                addToCart(product);
+                showToast('Product added to cart!', 'success');
+            } else {
+                showToast('Product is out of stock!', 'error');
+            }
+        } else if (buyLink) {
+            e.preventDefault();
+            const InStock = buyLink.dataset.inStock === 'true';
+            
+            if(InStock) {
+                showToast('Product has been successfully bought!', 'success');
+            } else {
+                showToast('Product is out of stock!', 'error');
+            }
         }
     })
     
@@ -214,4 +247,38 @@ const products = [
     }
 
 
+function showToast(message, type = 'success') {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icon = document.createElement('i');
+    icon.className = type === 'success' ? 'bx bx-check-circle' : 'bx bx-x-circle';
+    icon.style.fontSize = '1.5rem';
+    icon.style.color = type === 'success' ? '#2D5016' : '#d32f2f';
+    
+    const text = document.createElement('span');
+    text.textContent = message;
+    
+    toast.appendChild(icon);
+    toast.appendChild(text);
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300); 
+    }, 3000);
+}
 
