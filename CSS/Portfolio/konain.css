@@ -1,0 +1,241 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #2D5016;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navcontainer a {
+    color: #F5F5DC;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.navcontainer ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.navcontainer ul li a:hover {
+    color: #2D5016;
+    background-color: #F5F5DC;
+    border-radius: 10px;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.signup {
+    text-decoration: none;
+    color: #F5F5DC;
+    border: 2px solid #F5F5DC;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.signup:hover {
+    background-color: #F5F5DC;
+    color: #2D5016;
+}
+
+.bx-cart {
+    font-size: 30px;
+    color: #F5F5DC;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.bx-cart:hover {
+    transform: scale(1.1);
+}
+
+.portfolio {
+    padding: 60px 20px;
+}
+
+.portfolio_container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+}
+
+.intro {
+    flex: 1 1 500px;
+    align-self: center;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    color: #2D5016;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    outline: 3px solid #87A96B; /* The lining effect */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, outline-color 0.3s ease;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+    outline-color: #2D5016;
+}
+
+/* Section Styling */
+.education, .experience, .skills, .contact {
+    flex: 1 1 100%; /* Full width for these sections */
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.education h2, .experience h2, .skills h2, .contact h2 {
+    color: #2D5016;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 3px solid #87A96B;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.education ul li, .experience ul li {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 3px solid #eee;
+    transition: border-left-color 0.3s;
+}
+
+.education ul li:hover, .experience ul li:hover {
+    border-left-color: #87A96B;
+}
+
+.education h3, .experience h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.education strong, .experience strong {
+    color: #555;
+    font-weight: 600;
+}
+
+/* Skills Section */
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills ul li {
+    background-color: #f0f7eb;
+    color: #2D5016;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #87A96B;
+    transition: all 0.3s ease;
+}
+
+.skills ul li:hover {
+    background-color: #2D5016;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Contact Section */
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #555;
+}
+
+.contact p i {
+    font-size: 1.4rem;
+    color: #87A96B;
+}
+
+.contact a {
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #2D5016;
+    text-decoration: underline;
+}
