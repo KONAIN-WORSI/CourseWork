@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reshav Shah Portfolio</title>
+    <link rel="stylesheet" href="home.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #2D5016;
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+            height: 70px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navcontainer a {
+            color: #F5F5DC;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navcontainer ul{
+            list-style-type: none;
+            display: flex;
+        }
+
+        .navcontainer ul li a:hover {
+            color: #2D5016;
+            background-color: #F5F5DC;
+            border-radius: 10px;
+        }
+
+        .logo {
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-size: 24px;
+            font-weight: bold;
+            color: #F5F5DC;
+            text-decoration: none;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .signup {
+            text-decoration: none;
+            color: #F5F5DC;
+            border: 2px solid #F5F5DC;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .signup:hover {
+            background-color: #F5F5DC;
+            color: #2D5016;
+        }
+
+        .bx-cart {
+            font-size: 30px;
+            color: #F5F5DC;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .bx-cart:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 25px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        p {
+        font-size: 16px;
+        margin: 8px 0;
+        }
+
+        ul {
+        padding-left: 20px;
+        }
+
+        li {
+        margin: 5px 0;
+        }
+
+        hr {
+        border: none;
+        height: 1px;
+        background: #ddd;
+        margin: 20px 0;
+        }
+
+        .contact {
+        text-align: left;
+        font-size: 16px;
+        }
+
+        .contact a {
+        color: #000;
+        text-decoration: none;
+        }
+
+        .contact a:hover {
+         text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+ <header>
+       <nav>
+            <a href="home.html" class="logo">EcoMart 🌿</a>
+            <div class="navcontainer">
+                <ul>
+                    <li><a href="../home.html" target="_self">Home</a></li>
+                    <li><a href="../products.html" target="_self">Products</a></li>
+                    <li><a href="../blog.html" target="_self">Blog</a></li>
+                    <li><a href="../research.html" target="_self">Research</a></li>
+                    <li><a href="../about.html" target="_self">About Us</a></li>
+                    <li><a href="../contact.html" target="_self">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <a href="../cart.html"><i class='bx  bx-cart'></i></a>
+                <a href="../signin.html" target="_self" class="btn signup">Sign In</a>  
+            </div>
+        </nav>
+ </header>
+<div class="container">
+
+<h1>Reshav Shah</h1>
+Student Portfolio - Reshav Shah
+
+<hr>
+
+<h2>Education</h2>
+<p>
+<strong>High School</strong><br>
+Peace Zone Academy
+</p>
+
+<hr>
+
+<h2>Experience</h2>
+<p>
+Monitor - Peace Zone Academy
+</p>
+
+<hr>
+
+<h2>Skills</h2>
+<ul>
+<li>HTML</li>
+<li>CSS (Basic)</li>
+<li>JavaScript (Basic)</li>
+</ul>
+
+<hr>
+
+<h2>Contact</h2>
+<p class="contact">
+Email: reshavshah99@gmail.com.
+</p>
+
+<p class="footer">(c) 2026 Reshav Shah</p>
+
+</div>
+
+</body>
+</html>

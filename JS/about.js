@@ -25,9 +25,9 @@ function IsValidateForm() {
 
     showToast("Feedback submitted successfully", "success")
 
-    nameValue = "";
-    emailValue = "";
-    feedbackValue = "";
+    name.value = "";
+    email.value = "";
+    feedback.value = "";
 
     return false;
 

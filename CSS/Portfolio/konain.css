@@ -231,10 +231,6 @@ ul {
     color: #87A96B;
 }
 
-.contact a {
-    transition: color 0.3s;
-}
-
 .contact a:hover {
     color: #2D5016;
     text-decoration: underline;
