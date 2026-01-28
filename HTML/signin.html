@@ -9,6 +9,7 @@
 </head>
 <body>
    <header>
+    <!-- navigation bar section -->
         <nav>
             <a href="home.html" class="logo">EcoMart 🌿</a>
             <div class="navcontainer">
@@ -28,6 +29,7 @@
         </nav>
     </header>
     <div class="sign_form">
+        <!-- Sign In Form -->
         <h3 id="signIn">Sign In Form</h3>
         <form action="home.html" onsubmit="return IsValidateForm()" id="sign_in">
             <div class="name">
@@ -52,6 +54,7 @@
         </form>
     </div>
     <script>
+        // JavaScript for form validation and toast notifications
         const signInForm = document.getElementById('sign_in');
         const nameInput = document.getElementById('name')
         const emailInput = document.getElementById('email');
@@ -59,6 +62,7 @@
         const passwordInput = document.getElementById('password')
         const submitBtn = document.getElementById('submit_btn')
 
+        // Form validation function
         function IsValidateForm() {
             const name = nameInput.value.trim();
             const email = emailInput.value.trim();
@@ -72,11 +76,6 @@
 
             if(!isNaN(name)) {
                 showToast("Please enter a valid name", "error")
-                return false;
-            }
-
-            if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-                showToast("Please enter a valid email address", "error");
                 return false;
             }
 
@@ -96,9 +95,10 @@
                 signInForm.submit();
             }, 2000);
 
-            return false; // Prevent immediate submission
+            return false; 
         }
 
+        // Function to show toast notifications
         function showToast(message, type = 'success') {
             let container = document.querySelector('.toast-container');
             if (!container) {
