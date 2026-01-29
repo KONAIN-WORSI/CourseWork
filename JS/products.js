@@ -1,3 +1,4 @@
+// Defining an array of product objects with their details
 const products = [
     {
         productName: "Wooden Plates",
@@ -106,13 +107,14 @@ const products = [
     }
 ]
 
+    // accessing necessary elements
     const resultContainer = document.getElementById('product-grid');
     const searchInput = document.getElementById("search");
     const searchBtn = document.getElementById("search-btn");
     const buyBtn = document.querySelectorAll(".buy-btn");
     const filterBtn = document.querySelectorAll(".bx-filter");
     
-     
+    //  function to render products on the page
     function renderProducts(list) {
         resultContainer.innerHTML = list.map(product => {
             const detailImagePath = product.productImage.replace('../Images/', '../../Images/');
@@ -142,6 +144,7 @@ const products = [
     
     let isSorted = false;
 
+    // adding event listener to filter buttons(this will sort products based on price)
     filterBtn.forEach(btn => {
         btn.addEventListener('click', () => {
             if (!isSorted) {
@@ -158,7 +161,7 @@ const products = [
     });
 
 
-
+    // function to get products by search bar
     function getProductBySearchBar(products) {
         const search_val = searchInput.value.trim().toLowerCase();
      
@@ -198,8 +201,9 @@ const products = [
         }
     });
 
-renderProducts(products);
+    renderProducts(products);
     
+    // adding event listener to cart and buy buttons
     resultContainer.addEventListener('click', (e) => {
         const cartLink = e.target.closest('.add-to-cart');
         const buyLink = e.target.closest('.buy-btn');
@@ -232,6 +236,7 @@ renderProducts(products);
         }
     })
     
+    // function to add product to cart(local storage)
     function addToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -247,6 +252,7 @@ renderProducts(products);
     }
 
 
+// creating a toast message function(this will show popup messages)
 function showToast(message, type = 'success') {
     let container = document.querySelector('.toast-container');
     if (!container) {

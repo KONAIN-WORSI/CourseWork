@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
 }
 
+/* navigation bar */
 nav {
     background-color: #2D5016;
     width: 100%;
@@ -90,6 +91,7 @@ nav {
     transform: scale(1.1);
 }
 
+/* prodcut detailing section */
 .product-detail {
     max-width: 1000px;
     margin: 60px auto;
@@ -193,6 +195,7 @@ nav {
     color: #2D5016;
 }
 
+/* extra details highlights */
 .detail-extra ul {
     padding-left: 20px;
 }
@@ -225,6 +228,7 @@ nav {
     justify-content: space-between;
 }
 
+/* benefit cards */
 .benefit-card {
     flex: 1 1 250px;
     background: #f9f9f9;
@@ -258,6 +262,7 @@ nav {
     line-height: 1.5;
 }
 
+/* show toast messages */
 .toast-container {
     position: fixed;
     top: 80px;

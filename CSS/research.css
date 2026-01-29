@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Styles */
+/* Navigation bar */
 nav {
     background-color: #2D5016;
     width: 100%;
@@ -184,7 +184,7 @@ nav {
     transition: transform 0.3s ease;
     display: inline-block;
     vertical-align: top;
-    padding: 0 !important; /* Override inline styles */
+    padding: 0; 
 }
 
 #reference:hover, #own:hover {
@@ -193,9 +193,9 @@ nav {
 
 /* Table Styling */
 table {
-    width: 100% !important; /* Override inline width */
+    width: 100%; 
     border-collapse: collapse;
-    margin: 40px auto 0 auto !important;
+    margin: 40px auto 0 auto;
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -204,7 +204,7 @@ table {
 }
 
 thead tr {
-    background-color: #2D5016 !important;
+    background-color: #2D5016;
     color: #ffffff;
 }
 
@@ -230,7 +230,7 @@ tr:hover {
     background-color: #f8fcf8;
 }
 
-/* Footer alignment fix */
+/* Footer */
 .homefoot {
     background-color: #2C2C2C;
     width: 100%;

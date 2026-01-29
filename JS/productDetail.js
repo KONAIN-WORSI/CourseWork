@@ -1,4 +1,6 @@
+// loading the dom content when the page is being loaded
 document.addEventListener("DOMContentLoaded", function() {
+    // accessing necessary elements
     const detailImage = document.getElementById('detail-image');
     const detailName = document.getElementById('detail-name');
     const detailDescription = document.getElementById('detail-description');
@@ -6,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const detailStock = document.getElementById('detail-stock');
     const detailBuyBtn = document.getElementsByClassName('detail-buy-btn')[0];
     
+    // getting product details from URL parameters
     const params = new URLSearchParams(window.location.search);
     const nameParam = params.get('name');
     const imageParam = params.get('image');
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         detailStock.className = inStock ? 'in-stock' : 'out-of-stock';
     }
     
+    // adding event listener to add to cart button
     const detailAddCartBtn = document.getElementById('detail-add-cart-btn');
     if (detailAddCartBtn && stockParam) {
         detailAddCartBtn.addEventListener('click', (e) => {
@@ -56,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     
+    // function to add product to cart
     function addToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         
@@ -70,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
     
+    // creating a toast message function(this will show popup messages)
     function showToast(message, type = 'success') {
         let container = document.querySelector('.toast-container');
         if (!container) {
@@ -105,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 3000);
     }
 
+    // adding event listener to buy now button
     detailBuyBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const inStock = stockParam === 'true';

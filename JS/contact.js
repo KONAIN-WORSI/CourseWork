@@ -1,9 +1,11 @@
+// accessing form elements
 const signInForm = document.getElementById('sign_in');
 const nameInput = document.getElementById('name')
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 const submitBtn = document.getElementById('submit_btn')
 
+// creating a form validation function
 function IsValidateForm() {
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
@@ -39,6 +41,7 @@ function IsValidateForm() {
     return false; // Prevent page reload
 }
 
+// creating a toast message function(this will show popup messages)
 function showToast(message, type = 'success') {
     let container = document.querySelector('.toast-container');
     if (!container) {

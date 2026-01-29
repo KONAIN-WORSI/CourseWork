@@ -1,11 +1,14 @@
+// accessing main cart elements
 const cartItemsContainer = document.getElementById('cart-items');
 const cartTotalElement = document.getElementById('cart-total');
 
+// loading cart from localStorage
 function loadCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     renderCart(cart);
 }
 
+// rendering cart items
 function renderCart(cart) {
     cartItemsContainer.innerHTML = '';
     let total = 0;
@@ -45,6 +48,7 @@ function renderCart(cart) {
     cartTotalElement.innerText = `NPR ${total}`;
 }
 
+// updating item quantity function
 function updateQuantity(index, change) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
@@ -58,6 +62,7 @@ function updateQuantity(index, change) {
     }
 }
 
+// removing item from cart function
 function removeItem(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.splice(index, 1);
@@ -65,10 +70,12 @@ function removeItem(index) {
     renderCart(cart);
 }
 
+// checkout function
 function checkout() {
     showToast('Proceeding to checkout...', 'success');
 }
 
+// creating a toast message function(this will show popup messages)
 function showToast(message, type = 'success') {
     let container = document.querySelector('.toast-container');
     if (!container) {

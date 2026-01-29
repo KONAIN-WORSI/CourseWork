@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
 }
 
+/* Navigation bar */
 nav {
     background-color: #2D5016;
     width: 100%;
@@ -90,6 +91,7 @@ nav {
     transform: scale(1.1);
 }
 
+/* Hero section */
 .hero {
     height: 80vh;
     position: relative;
@@ -170,6 +172,7 @@ nav {
     }
 }
 
+/* Feature Product Section */
 .featureproduct {
     text-align: center;
     margin-top: 10px;
@@ -260,6 +263,7 @@ nav {
     background-color: #A65D3C;
 }
 
+/* Footer */
 .homefoot {
     background-color: #2C2C2C;
     width: 100%;
@@ -376,7 +380,7 @@ nav {
 
 .benefit-card {
     flex: 1 1 250px;
-    background: #f9f9f9;
+    background: #fff;
     border-radius: 20px;
     padding: 30px 20px;
     text-align: center;

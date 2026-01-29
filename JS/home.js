@@ -1,11 +1,11 @@
+// accessing necessary elements
 const addToCartBtn = document.querySelectorAll('.add-to-cart')
-
 const card = document.querySelectorAll('.productcard')
 const productInfo = document.querySelectorAll('.productinfo')
 const productPrice = document.querySelectorAll('.price')
 const productImage = document.querySelectorAll('.productimage')
 
-
+// adding event listeners to add to all cart buttons
 addToCartBtn.forEach((btn, index) => {
     btn.addEventListener('click' , (e) => {
         e.preventDefault();
@@ -26,6 +26,7 @@ addToCartBtn.forEach((btn, index) => {
 
     })
 
+    // adding product to cart
     function addToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const existingProduct = cart.find(item => item.name === product.name);
@@ -39,6 +40,7 @@ addToCartBtn.forEach((btn, index) => {
     }
 })
 
+// creating a toast message function(this will show popup messages)
 function showToast(message, type = 'success') {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -74,6 +76,7 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
+// adding click event to navigate to product detail page
 card.forEach((c, index) => {
     const imgContainer = productImage[index];
     const title = productInfo[index].querySelector('h3');
