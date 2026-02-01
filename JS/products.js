@@ -43,27 +43,6 @@ const products = [
         isStock: true
     },
     {
-        productName: "A Dinnerware Set",
-        productImage: "../Images/71A8dpVbDQL._AC_SL1500_.jpg",
-        productDescription: "A set of dinnerware for all your cooking needs.",
-        productPrice:1400,
-        isStock: false
-    },
-    {
-        productName: "A Spatula Set",
-        productImage: "../Images/713BZqnwTxL._AC_SL1500_.jpg",
-        productDescription: "A set of spatulas for all your cooking needs.",
-        productPrice:2500,
-        isStock: true
-    },
-    {
-        productName: "A Set of Disposable Utensils",
-        productImage: "../Images/71q1iv1eBDL._AC_SL1500_.jpg",
-        productDescription: "A set of disposable utensils for all cooking needs.",
-        productPrice:699,
-        isStock: true
-    },
-    {
         productName: "A Set of Bathroom Utility",
         productImage: "../Images/vecteezy_blue-and-white-bathroom-products-with-greenery-and-white_46097424.jpeg",
         productDescription: "A set of bathroom utility for all your needs.",
