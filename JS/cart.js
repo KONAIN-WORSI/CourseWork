@@ -72,7 +72,12 @@ function removeItem(index) {
 
 // checkout function
 function checkout() {
-    showToast('Proceeding to checkout...', 'success');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if(cart.length === 0){
+        showToast('Please add an item to cart section', 'error')
+    }else{
+        showToast('Proceeding to checkout...', 'success');
+    }
 }
 
 // creating a toast message function(this will show popup messages)
